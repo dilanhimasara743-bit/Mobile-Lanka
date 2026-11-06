@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="si">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827"><meta name="description" content="Mobile Lanka - Phone accessories online shop">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>Mobile Lanka</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="logo">ML</div><div><b>Mobile Lanka</b><small>Phone Accessories Store</small></div></div>
+  <button class="cartBtn" onclick="showCart()">🛒 Cart <span id="cartCount">0</span></button>
+</header>
+<section class="hero">
+  <div class="tag">MOBILE LANKA • ONLINE STORE</div>
+  <h1>ඔබට අවශ්‍ය Phone Accessories<br><em>එකම තැනකින්</em></h1>
+  <p>ගුණාත්මක භාණ්ඩ • සාධාරණ මිල • දිවයින පුරා Courier Delivery</p>
+  <a class="cta" href="#products">භාණ්ඩ බලන්න ↓</a>
+</section>
+<main>
+  <div class="sectionHead"><div><small>OUR COLLECTION</small><h2>අපේ භාණ්ඩ</h2></div><input id="search" placeholder="භාණ්ඩයක් සොයන්න..." oninput="render()"></div>
+  <div class="chips"><button class="chip active" onclick="setCat('All',this)">සියල්ල</button><button class="chip" onclick="setCat('Accessories',this)">Accessories</button><button class="chip" onclick="setCat('Power Banks',this)">Power Banks</button><button class="chip" onclick="setCat('Other',this)">වෙනත්</button></div>
+  <div id="products" class="grid"></div>
+</main>
+<footer><b>Mobile Lanka</b><p>දිවයින පුරා Courier Delivery</p><small>© <span id="year"></span> Mobile Lanka</small></footer>
+
+<div id="cartModal" class="modal"><div class="panel"><button class="close" onclick="closeCart()">✕</button><h2>ඔබේ Cart එක</h2><div id="cartItems"></div><div class="total" id="total"></div><button class="primary" onclick="checkout()">WhatsApp හරහා Order කරන්න</button></div></div>
+<div id="adminModal" class="modal"><div class="panel"><button class="close" onclick="closeAdmin()">✕</button><h2>Admin Panel</h2><p class="hint">භාණ්ඩ එකතු කිරීම / වෙනස් කිරීම / ඉවත් කිරීම</p><input id="pname" placeholder="භාණ්ඩයේ නම"><input id="pprice" type="number" placeholder="මිල (රු.)"><select id="pcat"><option>Accessories</option><option>Power Banks</option><option>Other</option></select><input id="pimage" placeholder="Photo URL (විකල්පයි)"><button class="primary" onclick="saveProduct()">භාණ්ඩය සුරකින්න</button><div id="adminList"></div></div></div>
+<button class="adminFab" onclick="openAdmin()" title="Admin">⚙</button>
+<script src="app.js"></script>
+</body></html>
